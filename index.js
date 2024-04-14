@@ -6,6 +6,7 @@ const bodyParser = require('body-parser')
 
 //Routes
 const UserRoute = require('./routes/UsersRoutes')
+const AuthRoute = require('./routes/AuthRoute')
 
 //connect to database
 mongoose.connect('mongodb://localhost:27017/businessdoc')
@@ -38,6 +39,8 @@ app.get('', (req, res)=>{
 } )
 
 app.use('/api/users/', UserRoute)
+app.use('/api/', AuthRoute)
+
 
 
 
